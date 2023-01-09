@@ -10,8 +10,11 @@ createApp({
         }
     },
     mounted() {
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((results) => {
-            this.email = results.data.response
-        })
+        for (let i = 0; i < 10; i++) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((results) => {
+                this.email = results.data.response
+            })
+        }
     }
-}, ).mount('app')
+
+}, ).mount('#app')
