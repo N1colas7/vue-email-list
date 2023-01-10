@@ -6,15 +6,15 @@ createApp({
 
     data() {
         return {
-            email: null
+            mails: []
         }
     },
     mounted() {
         for (let i = 0; i < 10; i++) {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((results) => {
-                this.email = results.data.response
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((risposta) => {
+                this.mails.push(risposta.data.response)
             })
         }
     }
 
-}, ).mount('#app')
+}).mount('#app');
